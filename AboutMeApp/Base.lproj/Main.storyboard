@@ -34,7 +34,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Log In"/>
                                         <connections>
-                                            <segue destination="nBL-gN-Cqg" kind="presentation" id="MBh-MN-IGG"/>
+                                            <segue destination="nBL-gN-Cqg" kind="presentation" id="ESs-xH-r6H"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -46,11 +46,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="151.5" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Forgot User Name?"/>
+                                        <connections>
+                                            <action selector="buttonForgotUserTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wGv-nO-dtB"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfO-E9-OJG">
                                         <rect key="frame" x="171.5" y="0.0" width="151.5" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Forgot Password?"/>
+                                        <connections>
+                                            <action selector="buttonForgotPasswordTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pck-6g-ykD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -84,8 +90,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wellcome," lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgm-am-rpv">
-                                <rect key="frame" x="131.5" y="120" width="112" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgm-am-rpv">
+                                <rect key="frame" x="137" y="120" width="101" height="30"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -98,6 +104,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="logOutTapped:" destination="nBL-gN-Cqg" eventType="touchUpInside" id="tR1-5c-thy"/>
+                                    <segue destination="cod-2R-jtV" kind="unwind" unwindAction="unwindFor:" id="WbQ-xX-vdJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -110,8 +117,12 @@
                             <constraint firstItem="Pgm-am-rpv" firstAttribute="top" secondItem="w7p-Kq-WqV" secondAttribute="top" constant="120" id="yM2-c3-8kN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userValueTF" destination="Pgm-am-rpv" id="KH6-Sy-r0t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avE-RI-QmZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="cod-2R-jtV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="870" y="-2"/>
         </scene>
