@@ -18,20 +18,23 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
+        view.endEditing(true)
+    }
         
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-        // Проверяем данные через guard
         guard userNameTextField.text == user, passwordTextField.text == password else {
             
-            // Если данные НЕВЕРНЫ:
-            showErrorAlert() // Показываем алерт
-            return false     // Отменяем переход
+            showErrorAlert()
+            return false
         }
         
-        // Если всё верно:
-        return true // Разрешаем переход
+        return true 
     }
 
     func showErrorAlert() {
